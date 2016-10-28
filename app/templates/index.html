@@ -1,0 +1,19 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+{% for first_level_menu in first_level%}
+<ul>{{first_level_menu.sectionName}}
+    {% for second_levell_menu in second_level%}
+    {%if second_levell_menu.parent_id==first_level_menu.id %}
+    <ul><a href="{{second_levell_menu.sectionURL}}">{{second_levell_menu.sectionName}}</a>
+        {% for thrid_level_menu in thrid_level%}
+        {%if thrid_level_menu.parent_id==second_levell_menu.id %}
+        <ul><a href="{{thrid_level_menu.sectionURL}}">{{thrid_level_menu.sectionName}}</a></ul>
+        {%endif%}
+        {%endfor%}
+    </ul>
+    {%endif%}
+    {%endfor%}
+</ul>
+{%endfor%}
+
+{% endblock %}
