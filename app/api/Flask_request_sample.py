@@ -1,5 +1,8 @@
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
+from app.loggingHelper import getLogger
+
+logger = getLogger('test')
 
 parser = reqparse.RequestParser(trim=True)
 parser.add_argument('name', location=['json', 'args'])
@@ -17,6 +20,7 @@ class HelloWorld(Resource):
     def get(self):
         args = parser.parse_args()
         args2 = parser2.parse_args()
+        logger.info('wellcome to the helloworld get method')
         print  args['post_data']
         return {'name': args['name'], 'age': args2['age'], 'post_data': args['post_data']}
 

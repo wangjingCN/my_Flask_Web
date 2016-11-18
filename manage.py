@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 import os
 from app import create_app, db
-from app.models import DBNSZone, DBNSDevice, DBNSLink, DBNSNSIPAssign, DBSYSDevice, DBSYSMenu, DBSYSUser, \
-    DBSYSUserMapMenu
+from app.models import DBNSZone, DBNSDevice, DBNSLink, DBNSNSIPAssign, DBSYSDevice,DBSYSUserMapMenu
 from flask.ext.script import Manager, Shell
 from flask.ext.migrate import Migrate, MigrateCommand
 
@@ -40,7 +39,6 @@ def createdb(drop_first):
 @manager.command
 def yes(name="Fred"):
     print "hello", name
-
 
 if __name__ == '__main__':
     manager.run()

@@ -1,5 +1,6 @@
-from app import logger,log_file_folder
-print log_file_folder
+from app import getLogger
+logger=getLogger('Xshell')
+
 logger.info("just a new test yes ok")
 logger.debug("for debug")
 logger.error('error')
