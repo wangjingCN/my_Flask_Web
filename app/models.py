@@ -18,13 +18,14 @@ class User(db.Model):
             self.password = None
 
     def set_password(self, password):
-        """Set password"""
         # self.password = bcrypt.generate_password_hash(password)
         self.password = prpcrypt().encrypt(password)
 
     def check_password(self, value):
-        """Check password."""
         return bcrypt.check_password_hash(self.password, value)
 
-    def __repr__(self):
+    def __str__(self):
         return '<User %r>' % self.username
+
+    __repr__ = __str__
+    # s=Student(),repr方法是实例s调用这个主要是作为测试来调用,,str方法时类Student()调用

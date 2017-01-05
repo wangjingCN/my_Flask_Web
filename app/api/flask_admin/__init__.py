@@ -26,11 +26,16 @@ class UserView(ModelView):
         'password',
         'setPassword'
     )
-    # def on_model_change(self, form, User,is_created):#password加密时bcrypt的写法
-    def on_model_change(self, form, User):
+
+    def on_model_change(self, form, User, is_created):  # password加密时bcrypt的写法
+        # def on_model_change(self, form, User):
         if form.setPassword.data is not None:
             User.set_password(form.setPassword.data)
+        # del form.password
 
+    def on_form_prefill(self, form, id):
+        # form.password.data = ''
+        pass
 
 class MyView(BaseView):
     @expose('/')
