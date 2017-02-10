@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import logging
 __author__ = 'wang jing'
 '''实际上就是python的getter和setter方法'''
-
 
 class Student(object):
     @property
@@ -32,3 +32,4 @@ class Chain(object):
     def __str__(self):
         return self._path
 print Chain().ag.add.list
+logging.exception('')
