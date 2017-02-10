@@ -24,6 +24,7 @@ class AuthLoginTestCase(unittest.TestCase):
         self.client.find_element_by_xpath('//input[@placeholder="请输入服务名称"]').send_keys('wwww.cmbchina.com')
         self.client.find_element_by_xpath('//input[@placeholder="服务器地址"]').send_keys('10.1.0.16')
         self.client.find_element_by_xpath('//button[@ng-click="addRealServerList()"]').click()
+        # self.assertTrue(self.client.find_element_by_xpath('//button[@ng-click="addRealServerList()"]').is_selected())
         self.client.find_element_by_xpath('//input[@value="TCP_PORT"]').click()
         print self.client.title
 
