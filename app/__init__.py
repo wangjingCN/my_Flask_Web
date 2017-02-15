@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # -*- coding:UTF-8 -*-
-from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
+from flask_bcrypt import Bcrypt
+from flask_sqlalchemy import SQLAlchemy
+
 from config import config
 from loggingHelper import getLogger
-from flask_bcrypt import Bcrypt
 
 bcrypt = Bcrypt()
 # from flask_admin import Admin
@@ -19,9 +20,9 @@ def create_app(config_name):
     db.init_app(app)
     bcrypt.init_app(app)
 
-    from app.api.main import main as main_blueprint
+    from app.upload import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
-    from app.api.flask_admin import create_admin_page
+    from app.upload import create_admin_page
     create_admin_page(app)
     return app
