@@ -1,0 +1,9 @@
+1487058290287	geckodriver	INFO	Listening on 127.0.0.1:57556
+1487058292290	mozprofile::profile	INFO	Using profile path C:\Users\jing\AppData\Local\Temp\rust_mozprofile.kaolFM81QcvJ
+1487058292297	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe
+1487058292330	geckodriver::marionette	INFO	Connecting to Marionette on localhost:57563
+1487058293287	Marionette	INFO	Listening on port 57563
+JavaScript error: https://res.mail.qq.com/bizmail/zh_CN/htmledition/js_biz/3rd/bj-report-tryjs.min334479.js, line 94: SyntaxError: invalid increment operand
+[Child 9880] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2056
+[Child 9880] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2056
+JavaScript error: chrome://marionette/content/listener.js, line 870: TypeError: can't access dead object
