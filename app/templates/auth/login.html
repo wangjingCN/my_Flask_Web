@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<div class="widget">
+    <div class="login-content">
+        <div class="widget-content" style="padding-bottom:0;">
+            <form class="no-margin" style="margin: 0;"
+                  action="{{ url_for('auth.login') }}" method='POST'>
+                <h3 class="form-title">测试系统</h3>
+
+                <fieldset>
+                    <div class="form-group no-margin">
+                        <!--<label for="userName">用户名</label>-->
+                        <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    <i class="icon-user"></i>
+                                </span>
+                            <input type='text' name='userName' id='userName'
+                                   placeholder='用户名'
+                                   class="form-control input-lg" required/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <!--<label for="password">密码</label>-->
+                        <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    <i class="icon-lock"></i>
+                                </span>
+                            <input type='password' name='password' id='password'
+                                   placeholder='密码'
+                                   class="form-control input-lg" required/>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <label class="checkbox">
+                            <div class="checker">
+                                <span>
+                                    <input type="checkbox" name="remember"/>
+                                </span>
+                            </div>
+                            Remember me
+                        </label>
+                        <button class="btn btn-warning pull-right"
+                                type="submit">
+                            Login <i class="m-icon-swapright m-icon-white"></i>
+                        </button>
+                    </div>
+                </fieldset>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
