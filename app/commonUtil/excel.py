@@ -55,5 +55,5 @@ def get_excel_base_ids(base_filename):
 
 # print len(get_excel_base_ids(u'10Y.xlsx'))
 # print edit_excel(u'10s.xlsx', get_excel_base_ids(u'10Y.xlsx'))
-# print edit_excel('aa.xlsx', get_excel_base_ids('a.xlsx'))
-print get_excel_base_ids(u'a.xlsx')
+print edit_excel('aa.xlsx', get_excel_base_ids('a.xlsx'))
+# print get_excel_base_ids(u'a.xlsx')

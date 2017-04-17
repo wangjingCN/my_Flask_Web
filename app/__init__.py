@@ -22,11 +22,6 @@ def create_app(config_name):
 
     from api.main import main as main_blueprint
     app.register_blueprint(main_blueprint)
-    
+
     return app
-    # from app.upload import main as main_blueprint
-    # app.register_blueprint(main_blueprint)
-    #
-    # from app.upload import create_admin_page
-    # create_admin_page(app)
-    # return app
+
