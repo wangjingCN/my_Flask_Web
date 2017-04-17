@@ -8,6 +8,7 @@ from ...models import User
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     if request.form and request.form['userName'] and request.form['password']:
+        return redirect(request.args.get('next') or url_for('main.index'))
         user = User.query.filter_by(username=request.form['userName'])
         if user and user.verify_password(request.form['password']):
             pass
