@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# !/usr/bin/env python
-# -*- coding: utf-8 -*-
 from xlrd import open_workbook, xldate
 from xlutils.copy import copy
 import xlwt
