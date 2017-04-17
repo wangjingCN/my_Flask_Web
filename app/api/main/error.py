@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from . import main
-from  flask import render_template
+from flask import render_template
 
 
 @main.app_errorhandler(404)
