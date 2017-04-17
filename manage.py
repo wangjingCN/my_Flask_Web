@@ -20,7 +20,7 @@ manager.add_command('db', MigrateCommand)
 
 
 @manager.command
-def test():
+def api():
     """Run the unit tests."""
     import unittest
     test = unittest.TestLoader().discover('test')
@@ -37,4 +37,4 @@ def createdb(drop_first):
 
 
 if __name__ == '__main__':
-        manager.run(default_command='runserver')
+    manager.run(default_command='runserver')
