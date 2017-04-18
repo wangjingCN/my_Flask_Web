@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from flask import render_template, request, flash, redirect, url_for, abort, session,_request_ctx_stack
+from flask import render_template, request, flash, redirect, url_for, abort, session, _request_ctx_stack
 from . import auth
 from ...models import User
 
@@ -12,7 +12,7 @@ def login():
             flash("invlad username")
             return redirect(url_for('.login'))
         session['current_user'] = request.form['userName']
-        user=request.form['userName']
+        user = request.form['userName']
         if user:
             print user
             _request_ctx_stack.top.user = user
@@ -36,6 +36,7 @@ def login():
 def logout():
     # logout_user()
     # flash('You have been logged out.')
+    session.pop("current_user", None)
     return redirect(url_for('main.index'))
 
 
