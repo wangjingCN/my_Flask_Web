@@ -7,7 +7,6 @@ from ...models import User
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
-    # flash("ni hao ", category='success')
     if request.form and request.form['userName'] and request.form['password']:
         if request.form['userName'] == 'x':
             flash("invlad username")
