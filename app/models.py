@@ -18,8 +18,8 @@ class User(db.Model):
             self.password = None
 
     def set_password(self, password):
-        # self.password = bcrypt.generate_password_hash(password)
-        self.password = prpcrypt().encrypt(password)
+        self.password = bcrypt.generate_password_hash(password)
+        # self.password = prpcrypt().encrypt(password)
 
     def check_password(self, value):
         return bcrypt.check_password_hash(self.password, value)
