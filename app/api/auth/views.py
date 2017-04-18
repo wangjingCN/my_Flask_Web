@@ -14,6 +14,7 @@ def login():
         session['current_user'] = request.form['userName']
         user=request.form['userName']
         if user:
+            print user
             _request_ctx_stack.top.user = user
         return redirect(request.args.get('next') or url_for('main.index'))
         user = User.query.filter_by(username=request.form['userName'])
