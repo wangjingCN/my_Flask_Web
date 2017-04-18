@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from flask import render_template, request, flash, redirect, url_for, abort
+from flask import render_template, request, flash, redirect, url_for, abort, session
 from . import auth
 from ...models import User
 
@@ -11,6 +11,7 @@ def login():
         if request.form['userName'] == 'x':
             flash("invlad username")
             return redirect(url_for('.login'))
+        session['current_user'] = request.form['userName']
         return redirect(request.args.get('next') or url_for('main.index'))
         user = User.query.filter_by(username=request.form['userName'])
         if user and user.verify_password(request.form['password']):
