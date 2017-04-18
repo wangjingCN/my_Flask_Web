@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from flask import render_template, request, flash, redirect, url_for, abort, session, _request_ctx_stack
+from flask import render_template, request, flash, redirect, url_for, abort, session, g
 from . import auth
 from ...models import User
 
@@ -8,26 +8,13 @@ from ...models import User
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     if request.form and request.form['userName'] and request.form['password']:
-        if request.form['userName'] == 'x':
+        user = User.query.filter_by(username=request.form['userName']).first()
+        # if not user or not user.verify_password(request.form['password']):
+        if not user:
             flash("invlad username")
             return redirect(url_for('.login'))
-        session['current_user'] = request.form['userName']
-        user = request.form['userName']
-        if user:
-            print user
-            _request_ctx_stack.top.user = user
+        session['current_user'] = user.username
         return redirect(request.args.get('next') or url_for('main.index'))
-        user = User.query.filter_by(username=request.form['userName'])
-        if user and user.verify_password(request.form['password']):
-            pass
-        flash('invald username or password')
-
-    # if form.validate_on_submit():
-    #     user = User.query.filter_by(email=form.email.data).first()
-    #     if user is not None and user.verify_password(form.password.data):
-    #         login_user(user, form.remember_me.data)
-    #         return redirect(request.args.get('next') or url_for('main.index'))
-    #     flash('Invalid username or password.')
     return render_template('auth/login.html')
 
 
