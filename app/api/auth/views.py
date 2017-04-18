@@ -1,13 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from flask import render_template, request, flash, redirect, url_for
+from flask import render_template, request, flash, redirect, url_for, abort
 from . import auth
 from ...models import User
 
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
+    # flash("ni hao ", category='success')
     if request.form and request.form['userName'] and request.form['password']:
+        if request.form['userName'] == 'x':
+            flash("invlad username")
+            return redirect(url_for('.login'))
         return redirect(request.args.get('next') or url_for('main.index'))
         user = User.query.filter_by(username=request.form['userName'])
         if user and user.verify_password(request.form['password']):
