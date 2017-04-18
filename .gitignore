@@ -1,1 +1,3 @@
-.idea
+.idea/*
+app/*.pyc
+app/api/*.pyc
