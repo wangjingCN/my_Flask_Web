@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from flask import render_template, request, flash, redirect, url_for, abort, session
+from flask import render_template, request, flash, redirect, url_for, abort, session,_request_ctx_stack
 from . import auth
 from ...models import User
 
@@ -12,6 +12,9 @@ def login():
             flash("invlad username")
             return redirect(url_for('.login'))
         session['current_user'] = request.form['userName']
+        user=request.form['userName']
+        if user:
+            _request_ctx_stack.top.user = user
         return redirect(request.args.get('next') or url_for('main.index'))
         user = User.query.filter_by(username=request.form['userName'])
         if user and user.verify_password(request.form['password']):
