@@ -5,7 +5,7 @@ from . import auth
 from ...models import User
 
 
-@auth.before_app_request()
+@auth.before_app_request
 def init_data():
     pass
 
