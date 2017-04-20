@@ -5,6 +5,11 @@ from . import auth
 from ...models import User
 
 
+@auth.before_app_request()
+def init_data():
+    pass
+
+
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     if request.form and request.form['userName'] and request.form['password']:
