@@ -7,7 +7,7 @@ def login_required(f):
     def decorated_function(*args, **kwargs):
         # if not g.current_user:
         #     print "yyyy"
-        if 'current_user' not in session:
+        if 'current_username' not in session:
             return redirect(url_for('auth.login'))
         return f(*args, **kwargs)
 

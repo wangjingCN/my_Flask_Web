@@ -24,6 +24,18 @@ class User(db.Model):
     def check_password(self, value):
         return bcrypt.check_password_hash(self.password, value)
 
+    def is_authenticated(self):
+        return True
+
+    def is_active(self):
+        return True
+
+    def is_anonymous(self):
+        return False
+
+    def get_id(self):
+        return unicode(self.id)
+
     def __str__(self):
         return '<User %r>' % self.username
 

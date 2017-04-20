@@ -14,13 +14,14 @@ from ...models import User
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     if request.form and request.form['userName'] and request.form['password']:
+        g.current_user = None
         user = User.query.filter_by(username=request.form['userName']).first()
         # if not user or not user.verify_password(request.form['password']):
         if not user:
             flash("invlad username")
             return redirect(url_for('.login'))
-        session['current_user'] = user.username
-        # g.current_user=user
+        session['current_username'] = user.username
+        g.current_user=user.username
         # print "xxxx"
         return redirect(request.args.get('next') or url_for('main.index'))
     return render_template('auth/login.html')
