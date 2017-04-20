@@ -5,10 +5,10 @@ from . import auth
 from ...models import User
 
 
-@auth.before_app_request
-def before_request():
-    #应该是这里有问题
-    g.current_user = None
+# @auth.before_app_request
+# def before_request():
+#     #应该是这里有问题
+#     g.current_user = None
 
 
 @auth.route('/login', methods=['GET', 'POST'])
@@ -20,8 +20,8 @@ def login():
             flash("invlad username")
             return redirect(url_for('.login'))
         session['current_user'] = user.username
-        g.current_user=user
-        print "xxxx"
+        # g.current_user=user
+        # print "xxxx"
         return redirect(request.args.get('next') or url_for('main.index'))
     return render_template('auth/login.html')
 
