@@ -3,27 +3,22 @@
 from flask import render_template, request, flash, redirect, url_for, abort, session, g
 from . import auth
 from ...models import User
-
-
-# @auth.before_app_request
-# def before_request():
-#     #应该是这里有问题
-#     g.current_user = None
+from flask_login import login_user
+# from flask_login import current_user
 
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     if request.form and request.form['userName'] and request.form['password']:
-        g.current_user = None
         user = User.query.filter_by(username=request.form['userName']).first()
-        # if not user or not user.verify_password(request.form['password']):
-        if not user:
-            flash("invlad username")
-            return redirect(url_for('.login'))
-        session['current_username'] = user.username
-        g.current_user=user.username
-        # print "xxxx"
-        return redirect(request.args.get('next') or url_for('main.index'))
+        if user and user.check_password(request.form['password']):
+            login_user(user, remember=request.form['remember'])
+            return redirect(request.args.get('next') or url_for('main.index'))
+        flash('Invalid username or password.')
+        return redirect(url_for('.login'))
+        # if not user:
+        #     flash("invlad username")
+        #     return redirect(url_for('.login'))
     return render_template('auth/login.html')
 
 

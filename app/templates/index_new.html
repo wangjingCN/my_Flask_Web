@@ -17,4 +17,4 @@
 {#{%endfor%}#}
 {##}
 {#{% endblock %}#}
-welcome to  my first Web{% if session['current_username'] %},尊敬的{{ session['current_username']}}!{% endif %}
+welcome to  my first Web,尊敬的{{ current_user.username }}!

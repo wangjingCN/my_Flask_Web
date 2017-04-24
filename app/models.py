@@ -2,7 +2,8 @@
 # -*- coding: UTF-8 -*-
 
 from . import db, bcrypt
-from .commonUtil.aesHelper import prpcrypt
+# from .commonUtil.aesHelper import prpcrypt
+from . import login_manager
 
 
 class User(db.Model):
@@ -41,3 +42,8 @@ class User(db.Model):
 
     __repr__ = __str__
     # s=Student(),repr方法是实例s调用这个主要是作为测试来调用,,str方法时类Student()调用
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))

@@ -12,7 +12,8 @@ bcrypt = Bcrypt()
 # from flask_admin import Admin
 
 db = SQLAlchemy()
-loginmanager = LoginManager()
+login_manager = LoginManager()
+login_manager.login_view = "auth.login"
 
 
 def create_app(config_name):
@@ -21,7 +22,7 @@ def create_app(config_name):
     config[config_name].init_app(app)
     db.init_app(app)
     bcrypt.init_app(app)
-    loginmanager.init_app(app)
+    login_manager.init_app(app)
 
     from api.main import main
     app.register_blueprint(main)
