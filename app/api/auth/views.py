@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from flask import render_template, request, flash, redirect, url_for, abort, session, g
+from flask import render_template, request, flash, redirect, url_for, session
 from . import auth
 from ...models import User
-from flask_login import login_user
-# from flask_login import current_user
+from flask_login import login_user, logout_user, login_required
 
 
 @auth.route('/login', methods=['GET', 'POST'])
@@ -16,18 +15,14 @@ def login():
             return redirect(request.args.get('next') or url_for('main.index'))
         flash('Invalid username or password.')
         return redirect(url_for('.login'))
-        # if not user:
-        #     flash("invlad username")
-        #     return redirect(url_for('.login'))
     return render_template('auth/login.html')
 
 
 @auth.route('/logout')
-# @login_required
+@login_required
 def logout():
-    # logout_user()
-    # flash('You have been logged out.')
-    session.pop("current_user", None)
+    logout_user()
+    flash('You have been logged out.')
     return redirect(url_for('main.index'))
 
 
