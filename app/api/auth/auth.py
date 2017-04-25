@@ -10,8 +10,8 @@ user_auth_token_post.add_argument('username', type=str, required=True, trim=True
 user_auth_token_post.add_argument('password', type=str, required=True, trim=True)
 
 
-class Auth(Resource):
-    def post(self):
+class AuthClass(Resource):
+    def get(self):
         args = user_auth_token_post.parse_args()
         user = User.query.filter_by(username=args['username']).first()
         if user and user.check_password(args['password']):
