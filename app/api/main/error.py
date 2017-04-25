@@ -2,10 +2,12 @@
 # -*- coding: utf-8 -*-
 from . import main
 from flask import render_template
+from manage import app
 
 
 @main.app_errorhandler(404)
 def page_not_found(e):
+    print "a"
     return render_template('errpage/404.html'), 404
 
 

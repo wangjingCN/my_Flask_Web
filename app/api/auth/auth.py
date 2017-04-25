@@ -20,5 +20,5 @@ class AuthClass(Resource):
             s = TimedJSONWebSignatureSerializer(current_app.config['SECRET_KEY'], expires_in=600)
             return {'token': s.dumps({"id": user.id})}
         else:
-            # abort(401)
-            return {"message": "unauthorized"}, 401
+            abort(401)
+            # return {"message": "unauthorized"}, 401
