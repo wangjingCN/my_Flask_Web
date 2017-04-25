@@ -45,6 +45,6 @@ class MyView(BaseView):
 
 def create_admin_page(app):
     admin_page.init_app(app)
-    admin_page.add_view(UserView(User, db.session, name=u"设备"))
-    admin_page.add_view(MyView(name=u'设备信息'))
+    admin_page.add_view(UserView(User, db.session, name=u"用户"))
+    # admin_page.add_view(MyView(name=u'设备信息'))
     # admin_page.add_view(MyView(name='Hello 3',endpoint='test3', category=u'设备信息'))

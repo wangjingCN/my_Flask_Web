@@ -9,7 +9,6 @@ from config import config
 from loggingHelper import getLogger
 
 bcrypt = Bcrypt()
-# from flask_admin import Admin
 
 db = SQLAlchemy()
 login_manager = LoginManager()
@@ -30,5 +29,8 @@ def create_app(config_name):
 
     from api.auth import auth
     app.register_blueprint(auth)
+
+    from .api.flask_admin import create_admin_page
+    create_admin_page(app)
 
     return app
