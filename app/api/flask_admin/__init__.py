@@ -6,8 +6,16 @@ from flask_admin.contrib.sqla import ModelView
 from app.models import User
 from app import db
 from wtforms import PasswordField
+from flask_login import current_user
 
 admin_page = Admin(name=u'基础配置', template_mode='bootstrap3')
+
+
+class MyView(ModelView):
+    def is_accessible(self):
+        if current_user.is_authenticated and current_user.username == "root":
+            return True
+        return False
 
 
 # class DBNSDeviceModelView(ModelView):
@@ -15,7 +23,7 @@ admin_page = Admin(name=u'基础配置', template_mode='bootstrap3')
 #     column_select_related_list = DBNSDevice.zone_id
 #     page_size = 20
 
-class UserView(ModelView):
+class UserView(MyView):
     # form_excluded_columns = ('password')
     form_extra_fields = {
         'setPassword': PasswordField('newpassword')
@@ -31,16 +39,17 @@ class UserView(ModelView):
         # def on_model_change(self, form, User):
         if form.setPassword.data is not None:
             User.set_password(form.setPassword.data)
-        # del form.password
+            # del form.password
 
     def on_form_prefill(self, form, id):
         # form.password.data = ''
         pass
 
-class MyView(BaseView):
-    @expose('/')
-    def index(self):
-        return self.render('deviceEdit.html')
+
+# class MyView(BaseView):
+#     @expose('/')
+#     def index(self):
+#         return self.render('deviceEdit.html')
 
 
 def create_admin_page(app):
