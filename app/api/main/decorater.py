@@ -1,27 +1,15 @@
+#!/usr/bin/env python
+# -*- coding:UTF-8 -*-
 from functools import wraps
-from flask import g, render_template, session, url_for, redirect, abort, request, make_response, jsonify
+from flask import g, render_template, session, url_for, redirect, abort, request, jsonify
 from flask_login import current_user
-from flask.ext.httpauth import HTTPBasicAuth
 
-auth = HTTPBasicAuth()
-# api的用法：@auth.login_required
-
-@auth.get_password
-def get_password(username):
-    if username == 'ok':
-        return 'python'
-    return None
-
-
-@auth.error_handler
-def unauthorized():
-    return make_response(jsonify({'error': 'Unauthorized access'}), 401)
 
 
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        if 'current_username' not in session:
+        if not current_user:
             return redirect(url_for('auth.login'))
         return f(*args, **kwargs)
 

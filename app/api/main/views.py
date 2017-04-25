@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 from flask import render_template
 from . import main
-from flask_login import login_required
+# from flask_login import login_required
+from decorater import login_required
 
 
 @main.route('/', methods=['GET', 'POST'])
