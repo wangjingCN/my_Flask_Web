@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from flask_admin import Admin, BaseView, expose
+from flask_admin import Admin, BaseView, expose, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
 from app.models import User
 from app import db
 from wtforms import PasswordField
 from flask_login import current_user
 
+# admin_page = Admin(name=u'基础配置', index_view=AdminIndexView(name=u"导航栏", url='/admin'), template_mode='bootstrap3')
 admin_page = Admin(name=u'基础配置', template_mode='bootstrap3')
 
 
