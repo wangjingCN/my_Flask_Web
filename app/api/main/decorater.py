@@ -1,19 +1,27 @@
 #!/usr/bin/env python
 # -*- coding:UTF-8 -*-
 from functools import wraps
-from flask import g, render_template, session, url_for, redirect, abort, request, jsonify
+from flask import url_for, redirect, abort, request, current_app
 from flask_login import current_user
 
 
-
-def login_required(f):
-    @wraps(f)
+def login_required(func):
+    @wraps(func)
     def decorated_function(*args, **kwargs):
-        if not current_user:
+        if not current_user.is_authenticated:
             return redirect(url_for('auth.login'))
-        return f(*args, **kwargs)
+        return func(*args, **kwargs)
 
     return decorated_function
+    # @wraps(func)
+    # def decorated_view(*args, **kwargs):
+    #     if current_app.login_manager._login_disabled:
+    #         return func(*args, **kwargs)
+    #     elif not current_user.is_authenticated:
+    #         return redirect(url_for('auth.login'))
+    #     return func(*args, **kwargs)
+    #
+    # return decorated_view
 
 
 def menu_permission_required():
