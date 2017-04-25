@@ -10,10 +10,10 @@ def page_not_found(e):
 
 
 @main.app_errorhandler(500)
-def page_not_found(e):
+def internal_server_error(e):
     return render_template('errpage/500.html'), 500
 
 
 @main.app_errorhandler(401)
-def page_not_found(e):
+def unauthorized(e):
     return render_template('errpage/401.html'), 401
