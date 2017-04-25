@@ -3,6 +3,7 @@
 from functools import wraps
 from flask import url_for, redirect, abort, request, current_app
 from flask_login import current_user
+from ...models import User
 
 
 def login_required(func):
@@ -13,15 +14,20 @@ def login_required(func):
         return func(*args, **kwargs)
 
     return decorated_function
-    # @wraps(func)
-    # def decorated_view(*args, **kwargs):
-    #     if current_app.login_manager._login_disabled:
-    #         return func(*args, **kwargs)
-    #     elif not current_user.is_authenticated:
-    #         return redirect(url_for('auth.login'))
-    #     return func(*args, **kwargs)
-    #
-    # return decorated_view
+
+# def login_required(func):
+#     @wraps(func)
+#     def decorated_function(*args, **kwargs):
+#         if current_user.is_authenticated:
+#             return func(*args, **kwargs)
+#         if request.args['token']:
+#             user = User.verify_auth_token(request.args['token'])
+#             if not user:
+#                 return {"message": "unauthorized"}, 401
+#             return func(*args, **kwargs)
+#         return redirect(url_for('auth.login'))
+#
+#     return decorated_function
 
 
 def menu_permission_required():

@@ -2,8 +2,9 @@
 # -*- coding: UTF-8 -*-
 
 from . import db, bcrypt
-# from .commonUtil.aesHelper import prpcrypt
+from itsdangerous import TimedJSONWebSignatureSerializer, BadSignature, SignatureExpired
 from . import login_manager
+from flask import current_app
 
 
 class User(db.Model):
@@ -36,6 +37,18 @@ class User(db.Model):
 
     def get_id(self):
         return unicode(self.id)
+
+    @staticmethod
+    def verify_auth_token(token):
+        s = TimedJSONWebSignatureSerializer(current_app.config['SECRET_KEY'])
+        try:
+            data = s.loads(token)
+        except SignatureExpired:
+            return None
+        except BadSignature:
+            return None
+        user = User.query.get(data['id'])
+        return user
 
     def __str__(self):
         return '<User %r>' % self.username
