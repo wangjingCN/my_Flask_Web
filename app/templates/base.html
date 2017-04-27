@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock title %}</title>
-    {% block styles %}{% endblock styles %}
+    {% block styles %}
+        <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet"
+              media="screen"/>
+    {% endblock styles %}
 </head>
 <body>
 {% block body_content %}{% endblock body_content %}
-{% block body_js %}{% endblock body_js %}
+{% block body_js %}
+    <script src="{{ url_for('static',filename='js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+{% endblock body_js %}
 </body>
 </html>
