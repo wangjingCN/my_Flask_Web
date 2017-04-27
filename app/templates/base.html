@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock title %}</title>
     {% block styles %}
-        <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet"
-              media="screen"/>
+        <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet" media="screen"/>
     {% endblock styles %}
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
 {% block body_content %}{% endblock body_content %}
