@@ -8,6 +8,7 @@ class testApi(unittest.TestCase):
     '''
     单元测试的写法
     '''
+
     def test_key(self):
         d = 5
         self.assertEquals(d, 5)

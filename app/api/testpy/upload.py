@@ -26,7 +26,7 @@ def allowed_file(filename):
 # value of the operation
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('upload.html')
 
 
 # Route that will process the file upload
