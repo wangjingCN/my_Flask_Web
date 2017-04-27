@@ -1,14 +1,10 @@
 {% extends "base.html" %}
 {% block title %}My Flask  WebSite{% endblock title %}
-{% block style %}
-   .carousel {
-    height:500px;
-    }
-    .carousel .item {
-    height:500px;
-    background-color:#000
-    }
-{% endblock style %}
+{% block styles %}
+    {{ super() }}
+    <link href="{{ url_for('static',filename='css/personal/basic.css') }}" rel="stylesheet" media="screen"/>
+    <link href="{{ url_for('static',filename='css/personal/carousel.css') }}" rel="stylesheet" media="screen"/>
+{% endblock %}
 {% block body_content %}
     {#    轮播组件开始#}
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -24,7 +20,7 @@
             <div class="item active">
                 <img src="{{ url_for('static',filename='pic/safari.jpg') }}" alt="safari">
                 <div class="carousel-caption">
-                   <h1>safari浏览器</h1>
+                    <h1>safari浏览器</h1>
                     <a role="button">点击我下载</a>
                 </div>
             </div>
@@ -32,14 +28,14 @@
                 <img src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="opera">
                 <div class="carousel-caption">
                     <h1>safari浏览器</h1>
-                     <a role="button">点击我下载</a>
+                    <a role="button">点击我下载</a>
                 </div>
             </div>
             <div class="item">
                 <img src="{{ url_for('static',filename='pic/firefox.jpg') }}" alt="firefox">
                 <div class="carousel-caption">
                     <h1>safari浏览器</h1>
-                     <a role="button">点击我下载</a>
+                    <a role="button">点击我下载</a>
                 </div>
             </div>
             <div class="."></div>
