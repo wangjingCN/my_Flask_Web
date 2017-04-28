@@ -1,3 +1,17 @@
 body {
     padding-top: 50px;
 }
+
+.footer-p {
+    padding-left: 30px;
+    font-family: bold;
+}
+
+.footer-top {
+    padding-right: 30px;
+}
+
+.foot_div {
+    background-color: #2aabd2;
+    background-position: top;
+}

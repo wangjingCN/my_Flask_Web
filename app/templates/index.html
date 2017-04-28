@@ -67,15 +67,30 @@
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
-                                                          data-toggle="tab">Home</a>
+                                                          data-toggle="tab">FireFox</a>
                 </li>
                 <li role="presentation"><a href="#profile" aria-controls="profile" role="tab"
-                                           data-toggle="tab">Profile</a>
+                                           data-toggle="tab">Opera</a>
                 </li>
                 <li role="presentation"><a href="#messages" aria-controls="messages" role="tab"
-                                           data-toggle="tab">Messages</a></li>
-                <li role="presentation"><a href="#settings" aria-controls="settings" role="tab"
-                                           data-toggle="tab">Settings</a></li>
+                                           data-toggle="tab">chorme</a></li>
+                <li class="下拉">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Others <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li role="presentation">
+                            <a href="#first" aria-controls="frist" role="tab"
+                               data-toggle="tab">first</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#second" aria-controls="second" role="tab"
+                               data-toggle="tab">second</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#third" aria-controls="third" role="tab"
+                               data-toggle="tab">third</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
 
             <!-- Tab panes -->
@@ -113,15 +128,20 @@
                                  src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="opera"></div>
                     </div>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="settings">
+                {#                下拉菜单#}
+
+                <div role="tabpanel" class="tab-pane" id="first" aria-labelledby="dropdown1-tab">
                     <div class="row feature">
-                        <div class="col-md-5">
-                            <h2 class="feature-heading">opera<span class="text-muted">用户首选</span></h2>
-                            <p class="lead">opera浏览器只为给你最好的体验,opera浏览器只为给你最好的体验</p>
-                        </div>
-                        <div class="col-md-7">
-                            <img class="feature-image img-responsive"
-                                 src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="opera"></div>
+                        <h2 class="feature-heading">opera<span class="text-muted"> Fist</span></h2>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="second" aria-labelledby="dropdown1-tab">
+                    <div class="row feature"><h2 class="feature-heading">opera<span class="text-muted"> second</span></h2>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="third" aria-labelledby="dropdown1-tab">
+                    <div class="row feature">
+                        <h2 class="feature-heading">opera<span class="text-muted"> third</span></h2>
                     </div>
                 </div>
             </div>
@@ -132,14 +152,6 @@
 
 
     <div class="text-center">
-        <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
-        <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
-        <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
-        <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
-        <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
-        <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
-        <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
-        <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
         <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
         <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
     </div>
