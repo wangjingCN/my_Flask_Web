@@ -19,3 +19,14 @@
     width: 33%;
 
 }
+
+.divider {
+    margin: 20px 0;
+}
+
+.nav .nav-tabs {
+    text-align: center;
+}
+.tab-pane img {
+    width: 80%;
+}

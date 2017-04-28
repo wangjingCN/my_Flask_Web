@@ -23,7 +23,7 @@
             </div>
             <div class="item">
                 <a href="http://www.baidu.com" target="_blank"><img
-                        src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="opera">s</a>
+                        src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="opera"></a>
             </div>
             <div class="item">
                 <a href="http://www.baidu.com" target="_blank"><img
@@ -42,6 +42,7 @@
         </a>
         {#    轮播组件结束#}
     </div>
+    {#    三栏布局#}
     <div class="container" id="sumary-container">
         <div class="row">
             <div class="col-md-4">
@@ -60,19 +61,54 @@
                 <a class="btn btn-lg btn-primary" href="#" role="button">点击我下载</a>
             </div>
         </div>
-    </div>
+        <hr class="divider">
+        <div>
 
-    {#    轮播组件结束#}
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
+                                                          data-toggle="tab">Home</a>
+                </li>
+                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab"
+                                           data-toggle="tab">Profile</a>
+                </li>
+                <li role="presentation"><a href="#messages" aria-controls="messages" role="tab"
+                                           data-toggle="tab">Messages</a></li>
+                <li role="presentation"><a href="#settings" aria-controls="settings" role="tab"
+                                           data-toggle="tab">Settings</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <div class="col-md-7">
+                        <h2 class="feature-heading">opera<span class="text-muted">用户首选</span></h2>
+                        <p class="lead">opera浏览器只为给你最好的体验,opera浏览器只为给你最好的体验</p>
+                    </div>
+                    <div class="col-md-5">
+                        <img class="feature-image img-responsive"
+                             src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="opera"></div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="profile">
+                    <div class="col-md-5">我有7行</div>
+                    <div class="col-md-7">我有5行</div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="messages">
+                    <div class="col-md-7">我有7行</div>
+                    <div class="col-md-5">我有5行</div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="settings">
+                    <div class="col-md-5">我有7行</div>
+                    <div class="col-md-7">我有5行</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {#标签页#}
+
+
     <div class="text-center">
-        <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
-        <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
-        <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
-        <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
-        <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
-        <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
-        <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
-        <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
-        <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
         <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
         <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
         <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
