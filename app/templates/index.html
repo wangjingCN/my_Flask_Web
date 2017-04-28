@@ -2,8 +2,8 @@
 {% block title %}My Flask  WebSite{% endblock title %}
 {% block styles %}
     {{ super() }}
-    <link href="{{ url_for('static',filename='css/personal/basic.css') }}" rel="stylesheet" />
-    <link href="{{ url_for('static',filename='css/personal/carousel.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static',filename='css/personal/basic.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static',filename='css/personal/carousel.css') }}" rel="stylesheet"/>
 {% endblock %}
 {% block body_content %}
     {#    轮播组件开始#}
@@ -20,26 +20,14 @@
             <div class="item active">
                 <a href="http://www.baidu.com" target="_blank"><img
                         src="{{ url_for('static',filename='pic/safari.jpg') }}" alt="safari"></a>
-                {#                <div class="carousel-caption">#}
-                {#                    <h1>safari浏览器</h1>#}
-                {#                    <a  class="btn btn-lg btn-primary" href="#" role="button">点击我下载</a>#}
-                {#                </div>#}
             </div>
             <div class="item">
                 <a href="http://www.baidu.com" target="_blank"><img
                         src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="opera">s</a>
-                {#                <div class="carousel-caption">#}
-                {#                    <h1>safari浏览器</h1>#}
-                {#                    <a   class="btn btn-lg btn-primary" href="#" role="button">点击我下载</a>#}
-                {#                </div>#}
             </div>
             <div class="item">
                 <a href="http://www.baidu.com" target="_blank"><img
                         src="{{ url_for('static',filename='pic/firefox.jpg') }}" alt="firefox"></a>
-                {#                <div class="carousel-caption">#}
-                {#                    <h1>safari浏览器</h1>#}
-                {#                    <a  class="btn btn-lg btn-primary" href="#" role="button">点击我下载</a>#}
-                {#                </div>#}
             </div>
         </div>
 
@@ -52,24 +40,24 @@
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">下一页</span>
         </a>
-
+        {#    轮播组件结束#}
     </div>
     <div class="container" id="sumary-container">
         <div class="row">
             <div class="col-md-4">
                 <img src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="safari">
                 <h2>一个飞快的浏览器</h2>
-                 <a  class="btn btn-lg btn-primary" href="#" role="button">点击我下载</a>
+                <a class="btn btn-lg btn-primary" href="#" role="button">点击我下载</a>
             </div>
             <div class="col-md-4">
                 <img src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="safari">
                 <h2>一个飞快的浏览器</h2>
-                 <a  class="btn btn-lg btn-primary" href="#" role="button">点击我下载</a>
+                <a class="btn btn-lg btn-primary" href="#" role="button">点击我下载</a>
             </div>
             <div class="col-md-4">
                 <img src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="safari">
                 <h2>一个飞快的浏览器</h2>
-                 <a  class="btn btn-lg btn-primary" href="#" role="button">点击我下载</a>
+                <a class="btn btn-lg btn-primary" href="#" role="button">点击我下载</a>
             </div>
         </div>
     </div>
