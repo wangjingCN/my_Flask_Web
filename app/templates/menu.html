@@ -44,8 +44,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">尊敬的{{ current_user.username }}! <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">系统管理</a></li>
-                        <li><a href="#">退出</a></li>
+                        <li><a href="/admin">系统管理</a></li>
+                        <li><a href="{{ url_for("auth.logout") }}">退出</a></li>
                     </ul>
                 </li>
                 <li class="active"><a href="#" data-toggle="modal" data-target="#myModal">关于本站</a></li>
