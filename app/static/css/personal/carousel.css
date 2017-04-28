@@ -7,6 +7,15 @@
     background-color: #0066cc
 }
 
-.carousel .img {
+.carousel .item img {
     width: 100%
+}
+
+#sumary-container {
+    text-align: center;
+}
+
+#sumary-container .col-md-4 img {
+    width: 33%;
+
 }
