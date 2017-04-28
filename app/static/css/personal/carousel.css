@@ -27,6 +27,19 @@
 .nav .nav-tabs {
     text-align: center;
 }
+
 .tab-pane img {
     width: 80%;
+}
+
+.feature {
+    padding: 30px 0;
+}
+
+.feature-heading {
+    margin-top: 80px;
+}
+
+.feature-heading .text-muted {
+    padding: 80px 0;
 }
