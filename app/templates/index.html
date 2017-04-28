@@ -136,7 +136,8 @@
                     </div>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="second" aria-labelledby="dropdown1-tab">
-                    <div class="row feature"><h2 class="feature-heading">opera<span class="text-muted"> second</span></h2>
+                    <div class="row feature"><h2 class="feature-heading">opera<span class="text-muted"> second</span>
+                    </h2>
                     </div>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="third" aria-labelledby="dropdown1-tab">
@@ -153,8 +154,9 @@
 
     <div class="text-center">
         <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
-        <div><h3>welcome to my first Web,尊敬的{{ current_user.username }}!</h3></div>
+        <!-- Button trigger modal -->
     </div>
+
 {% endblock body_content %}
 {% block body_js %}
     {{ super() }}

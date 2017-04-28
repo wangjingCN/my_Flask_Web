@@ -1,5 +1,6 @@
 body {
     padding-top: 50px;
+    padding-bottom: 30px;
 }
 
 .footer-p {
@@ -9,9 +10,4 @@ body {
 
 .footer-top {
     padding-right: 30px;
-}
-
-.foot_div {
-    background-color: #2aabd2;
-    background-position: top;
 }
