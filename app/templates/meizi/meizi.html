@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% block title %} {{ title }}{% endblock title %}
+{% block styles %}
+    {{ super() }}
+    <link href="{{ url_for('static',filename='css/personal/basic.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static',filename='css/personal/carousel.css') }}" rel="stylesheet"/>
+{% endblock %}
 {% block body_content %}
    <div class="container" id="sumary-container">
         <div class="row">
@@ -23,7 +28,27 @@
                 <h2>一个飞快的浏览器</h2>
                 <a class="btn btn-lg btn-primary" href="#" role="button">点击我下载</a>
             </div>
+            <div class="col-md-4">
+                <img src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="safari">
+                <h2>一个飞快的浏览器</h2>
+                <a class="btn btn-lg btn-primary" href="#" role="button">点击我下载</a>
+            </div>
+            <div class="col-md-4">
+                <img src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="safari">
+                <h2>一个飞快的浏览器</h2>
+                <a class="btn btn-lg btn-primary" href="#" role="button">点击我下载</a>
+            </div>
+            <div class="col-md-4">
+                <img src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="safari">
+                <h2>一个飞快的浏览器</h2>
+                <a class="btn btn-lg btn-primary" href="#" role="button">点击我下载</a>
+            </div>
+            <div class="col-md-4">
+                <img src="{{ url_for('static',filename='pic/opera.jpg') }}" alt="safari">
+                <h2>一个飞快的浏览器</h2>
+                <a class="btn btn-lg btn-primary" href="#" role="button">点击我下载</a>
+            </div>
         </div>
-        <hr class="divider">
+
     </div>
 {% endblock %}

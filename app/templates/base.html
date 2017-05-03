@@ -6,6 +6,7 @@
     <title>{% block title %}{% endblock title %}</title>
     {% block styles %}
         <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet" media="screen"/>
+        <link href="{{ url_for('static',filename='css/personal/basic.css') }}" rel="stylesheet"/>
     {% endblock styles %}
     <!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -19,14 +20,12 @@
     <script src="{{ url_for('static',filename='js/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
 {% endblock body_js %}
-<div class="foot">
-    <hr class="divider">
-    <div class="foot_div">
-        <footer>
-            <p class="pull-right footer-top"><a href="#top"> 回到顶部</a></p>
-            <p class="footer-p"> Design by WangJing @2017</p>
-        </footer>
-    </div>
+<hr class="divider">
+<div class="foot_div">
+    <footer>
+        <p class="pull-right footer-top"><a href="#top"> 回到顶部</a></p>
+        <p class="footer-p"> Design by WangJing @2017</p>
+    </footer>
 </div>
 {#弹出框#}
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
