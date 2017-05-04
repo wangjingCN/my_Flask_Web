@@ -7,4 +7,4 @@ link = Blueprint('link', __name__)
 
 @link.route('/link')
 def link_index():
-    return render_template("meizi/meizi.html", title=u'精彩的妹子图片')
+    return render_template("link/link.html", title=u"这个是我们的link")

@@ -2,8 +2,8 @@
 {% block title %} {{ title }}{% endblock title %}
 {% block styles %}
     {{ super() }}
-    <link href="{{ url_for('static',filename='css/personal/basic.css') }}" rel="stylesheet"/>
     <link href="{{ url_for('static',filename='css/personal/carousel.css') }}" rel="stylesheet"/>
 {% endblock %}
 {% block body_content %}
+    <p>我是link</p>
 {% endblock %}
