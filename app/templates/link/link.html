@@ -3,7 +3,26 @@
 {% block styles %}
     {{ super() }}
     <link href="{{ url_for('static',filename='css/personal/carousel.css') }}" rel="stylesheet"/>
+    <style type="text/css">
+
+
+        div[id*=xx] {
+            width: 300px;
+            background-color: #5cb85c;
+        }
+
+        div[id^=xx] {
+            background-color: #3c3c3c;
+        }
+
+        div[id=xx] {
+            background-color: #9d9d9d;
+        }
+    </style>
 {% endblock %}
 {% block body_content %}
-    <p>我是link</p>
+    <div id="a">id属性</div>
+    <div id="zzxx">id属性</div>
+    <div id="xxyy">id属性</div>
+    <div id="xx">id属性</div>
 {% endblock %}
