@@ -30,10 +30,11 @@ def create_app(config_name):
     from api.auth import auth
     app.register_blueprint(auth)
 
-    from .api.flask_admin import create_admin_page
+    from api.flask_admin import create_admin_page
     create_admin_page(app)
 
-    from api.page_route.meizi import meinv
-    app.register_blueprint(meinv,url_prefix="/menu")
+    from api.page_route import meinv, link
+    app.register_blueprint(meinv)
+    app.register_blueprint(link)
 
     return app

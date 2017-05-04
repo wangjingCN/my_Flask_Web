@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 from flask import Blueprint, render_template
 
-meinv = Blueprint('meinv', __name__, url_prefix="/meizi")
+link = Blueprint('link', __name__)
 
 
-@meinv.route('/pic')
-def meinv_pic():
+@link.route('/link')
+def link_index():
     return render_template("meizi/meizi.html", title=u'精彩的妹子图片')
