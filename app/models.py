@@ -5,7 +5,7 @@ from . import db, bcrypt
 from itsdangerous import TimedJSONWebSignatureSerializer, BadSignature, SignatureExpired
 from . import login_manager
 from flask import current_app
-import datetime
+from datetime import datetime
 
 
 class User(db.Model):
@@ -15,7 +15,7 @@ class User(db.Model):
     sex = db.Column(db.String(10))
     address = db.Column(db.String(255))  # 居住地
     work_address = db.Column(db.String(255))  # 工作地点
-    birth = db.Column(db.DateTime(), default=datetime.now)  # 出生日期
+    birth = db.Column(db.DateTime, default=datetime.now())  # 出生日期
     year_monoey=db.Column(db.String(255)) #年收入
 
     def __init__(self, username="", password=""):

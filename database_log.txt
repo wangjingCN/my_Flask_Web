@@ -1,0 +1,5 @@
+python manage.py db init
+python manage.py db migrate
+python manage.py db upgrade
+
+需要说明的是，如果init报错的话,就进入数据库删除alembic这个表,重新执行上面的步骤
