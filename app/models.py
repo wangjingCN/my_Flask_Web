@@ -5,12 +5,18 @@ from . import db, bcrypt
 from itsdangerous import TimedJSONWebSignatureSerializer, BadSignature, SignatureExpired
 from . import login_manager
 from flask import current_app
+import datetime
 
 
 class User(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     username = db.Column(db.String(80), unique=True)
     password = db.Column(db.String(120))  # 这个密码可以用来还原的,如果用bcrypt.generate_password_hash来生成密码,则是不能还原的
+    sex = db.Column(db.String(10))
+    address = db.Column(db.String(255))  # 居住地
+    work_address = db.Column(db.String(255))  # 工作地点
+    birth = db.Column(db.DateTime(), default=datetime.now)  # 出生日期
+    year_monoey=db.Column(db.String(255)) #年收入
 
     def __init__(self, username="", password=""):
         self.username = username
