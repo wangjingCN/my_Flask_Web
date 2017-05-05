@@ -16,7 +16,7 @@ class User(db.Model):
     address = db.Column(db.String(255))  # 居住地
     work_address = db.Column(db.String(255))  # 工作地点
     birth = db.Column(db.DateTime, default=datetime.now())  # 出生日期
-    year_monoey = db.Column(db.String(255))  # 年收入
+    year_money = db.Column(db.String(255))  # 年收入
     marital_status = db.Column(db.String(25))  # 婚姻状态 单身，热恋中，已婚
     requirement_opposite = db.Column(db.Text)  # 对异性的要求
     qq = db.Column(db.String(255))
