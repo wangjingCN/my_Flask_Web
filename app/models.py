@@ -20,9 +20,10 @@ class User(db.Model):
     marital_status = db.Column(db.String(25))  # 婚姻状态 单身，热恋中，已婚
     requirement_opposite = db.Column(db.Text)  # 对异性的要求
     qq = db.Column(db.String(255))
+    weixin = db.Column(db.String(255))  # 微信号
     tel = db.Column(db.String(255))  # 电话，唯一字段
     e_mail = db.Column(db.String(255))
-    personal_detail = db.Column(db.Text)  # 个人情况说明
+    personal_detail = db.Column(db.Text)  # 个人情况说明,谈谈爱好，兴趣，工作内容，家庭状况
     pic_url = db.db.Column(db.String(255))  # 头像地址
 
     def __init__(self, username="", password=""):
