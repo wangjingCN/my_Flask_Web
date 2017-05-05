@@ -24,7 +24,7 @@ class User(db.Model):
     tel = db.Column(db.String(255))  # 电话，唯一字段
     e_mail = db.Column(db.String(255))
     personal_detail = db.Column(db.Text)  # 个人情况说明,谈谈爱好，兴趣，工作内容，家庭状况
-    pic_url = db.db.Column(db.String(255))  # 头像地址
+    pic_url = db.Column(db.String(255))  # 头像地址
 
     def __init__(self, username="", password=""):
         self.username = username
