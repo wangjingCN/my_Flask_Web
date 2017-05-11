@@ -18,11 +18,44 @@
         div[id=xx] {
             background-color: #9d9d9d;
         }
+
+        {#        div#a {#}
+        {#            border: 2px dotted;#}
+        {#        }#}
+        div .a {
+            width: 80px;
+            background-color: #31708f;
+        }
+
+        #b:first-letter {
+            font-size: 30pt;
+            font-weight: bold;
+        }
+
+        span {
+            display: block;
+        }
+
+        span:first-letter {
+            font-weight: bold;
+        }
+
+        div > div:before {
+            content: "Heloo";
+        }
+
+        div > div:after {
+            content: url({{ url_for('static',filename='pic/opera.jpg') }});
+        }
     </style>
 {% endblock %}
 {% block body_content %}
-    <div id="a">id属性</div>
+    <div id="a">
+        <div class="a">id属性</div>
+    </div>
+    <div id="b">id属性</div>
     <div id="zzxx">id属性</div>
     <div id="xxyy">id属性</div>
     <div id="xx">id属性</div>
+    <span>去年几日此门中</span>
 {% endblock %}

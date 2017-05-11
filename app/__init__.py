@@ -7,6 +7,7 @@ from flask_login import LoginManager
 
 from config import config
 from loggingHelper import getLogger
+from flask_babelex import Babel
 
 bcrypt = Bcrypt()
 
@@ -16,6 +17,8 @@ login_manager.login_view = "auth.login"
 login_manager.session_protection = "strong"
 
 
+
+
 def create_app(config_name):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
@@ -23,6 +26,9 @@ def create_app(config_name):
     db.init_app(app)
     bcrypt.init_app(app)
     login_manager.init_app(app)
+
+    babel = Babel()
+    babel.init_app(app)
 
     from api.main import main
     app.register_blueprint(main)
