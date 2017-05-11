@@ -46,7 +46,7 @@ class UserView(MyView):
         # form.password.data = ''
         pass
 
-
+    column_filters = ('username', 'password')
 # class MyView(BaseView):
 #     @expose('/')
 #     def index(self):
