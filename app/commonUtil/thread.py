@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import threading
+import threadingTest
 import random
 import Queue
 from time import sleep
@@ -9,10 +9,10 @@ import sys
 #需求分析：有大批量数据需要执行，而且是重复一个函数操作（例如爆破密码），如果全部开始线程数N多，这里控制住线程数m个并行执行，其他等待
 #
 #继承一个Thread类，在run方法中进行需要重复的单个函数操作
-class Test(threading.Thread):
+class Test(threadingTest.Thread):
   def __init__(self,queue,lock,num):
     #传递一个队列queue和线程锁，并行数
-    threading.Thread.__init__(self)
+    threadingTest.Thread.__init__(self)
     self.queue=queue
     self.lock=lock
     self.num=num
@@ -24,14 +24,14 @@ class Test(threading.Thread):
       lock.acquire()#锁住线程，防止同时输出造成混乱
       print '开始一个线程：',self.name,'模拟的执行时间：',n
       print '队列剩余：',queue.qsize()
-      print threading.enumerate()
+      print threadingTest.enumerate()
       lock.release()
       sleep(n)#执行单次操作，这里sleep模拟执行过程
       self.queue.task_done()#发出此队列完成信号
 threads=[]
 queue=Queue.Queue()
-lock=threading.Lock()
-num=threading.Semaphore(3)#设置同时执行的线程数为3，其他等待执行
+lock=threadingTest.Lock()
+num=threadingTest.Semaphore(3)#设置同时执行的线程数为3，其他等待执行
 #启动所有线程
 for i in range(10):#总共需要执行的次数
   t=Test(queue,lock,num)
